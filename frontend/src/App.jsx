@@ -8,6 +8,7 @@ import Dashboard from './pages/Dashboard.jsx'
 import Library from './pages/Library.jsx'
 import Tutor from './pages/Tutor.jsx'
 import Quiz from './pages/Quiz.jsx'
+import Revision from './pages/Revision.jsx'
 import ComingSoon from './pages/ComingSoon.jsx'
 
 function NotFound() {
@@ -33,7 +34,7 @@ export default function App() {
         <Route path="tutor" element={<Tutor />} />
         <Route path="quiz" element={<Quiz />} />
         <Route path="flashcards" element={<ComingSoon view="flashcards" />} />
-        <Route path="revision" element={<ComingSoon view="revision" />} />
+        <Route path="revision" element={<Revision />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

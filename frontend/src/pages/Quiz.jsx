@@ -12,9 +12,14 @@
  *
  * The answer key is only ever exposed in practice mode; exam mode reveals
  * everything after submission, exactly like the endpoint contract.
+ *
+ * Deep links (used by the Revision Center):
+ *   /quiz?topic=<id>          -> pre-select one topic
+ *   /quiz?topic=<id>&start=1  -> pre-select and start immediately
  */
 
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import {
   ArrowLeft,
   ArrowRight,
@@ -1025,8 +1030,18 @@ export default function Quiz() {
   const { t, lang, isRTL } = useLanguage()
   const translation = useQuestionTranslation(t)
 
+  const [searchParams] = useSearchParams()
+
+  // Deep link `/quiz?topic=<id>` — pre-select the topic (Revision Center).
+  const linkedTopicId = useMemo(() => {
+    const id = Number(searchParams.get('topic'))
+    return Number.isInteger(id) && id > 0 ? id : null
+  }, [searchParams])
+
   const [phase, setPhase] = useState('setup')
-  const [config, setConfig] = useState(DEFAULT_CONFIG)
+  const [config, setConfig] = useState(() =>
+    linkedTopicId == null ? DEFAULT_CONFIG : { ...DEFAULT_CONFIG, topicIds: [linkedTopicId] },
+  )
   const [topics, setTopics] = useState([])
   const [topicsLoading, setTopicsLoading] = useState(true)
   const [quiz, setQuiz] = useState(null)
@@ -1071,7 +1086,7 @@ export default function Quiz() {
     }
   }, [])
 
-  const startQuiz = async () => {
+  const startQuiz = useCallback(async () => {
     setStarting(true)
     setError(null)
     try {
@@ -1099,7 +1114,15 @@ export default function Quiz() {
     } finally {
       setStarting(false)
     }
-  }
+  }, [config, t])
+
+  // `/quiz?topic=<id>&start=1` runs the quiz straight away — exactly once.
+  const autoStartedRef = useRef(false)
+  useEffect(() => {
+    if (searchParams.get('start') !== '1' || autoStartedRef.current) return
+    autoStartedRef.current = true
+    startQuiz()
+  }, [searchParams, startQuiz])
 
   const submit = async (answers) => {
     if (!quiz || submitting) return

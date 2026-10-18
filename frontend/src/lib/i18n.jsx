@@ -334,6 +334,77 @@ const STRINGS = {
         submit: 'تعذّر تصحيح الكويز — جرّب تسلّم تاني.',
       },
     },
+    revision: {
+      title: 'مركز المراجعة',
+      subtitle: 'خطة واحدة مركّزة: أضعف مواضيعك + البطاقات اللي محتاجة تثبيت',
+      refresh: 'حدّث الخطة',
+      metrics: {
+        needsRevision: 'مواضيع محتاجة مراجعة',
+        learning: 'مواضيع تحت التعلم',
+        weakCards: 'بطاقات ثقتها واطية',
+        mediumCards: 'بطاقات متوسطة',
+      },
+      queue: {
+        title: 'طابور المواضيع',
+        hint: 'مرتّب من الأضعف للأقوى — ابدأ من فوق',
+        empty: 'منطقة مريحة: مفيش مواضيع محتاجة مراجعة دلوقتي',
+        attempts: '{n} محاولة',
+        lastScore: 'آخر درجة: {score}%',
+        noScore: 'لسه مفيش محاولات',
+        retake: 'أعد الكويز',
+        cards: 'بطاقاته',
+      },
+      cards: {
+        title: 'جلسة بطاقات المراجعة',
+        hint: 'اقلب البطاقة وقيّم نفسك بصدق — التقييم بيحدّث ثقة البطاقة على الخادم.',
+        progress: 'بطاقة {n} من {total}',
+        front: 'السؤال',
+        back: 'الإجابة',
+        flip: 'اقلب البطاقة',
+        skip: 'تخطي',
+        ratings: {
+          again: 'أعِد',
+          hard: 'صعب',
+          good: 'تمام',
+          easy: 'سهل',
+        },
+        filters: {
+          label: 'الموضوع',
+          all: 'كل المواضيع',
+          includeHigh: 'شمّل البطاقات المضمونة',
+        },
+        tones: {
+          low: 'ثقة واطية',
+          medium: 'ثقة متوسطة',
+          high: 'ثقة عالية',
+        },
+        empty: 'مفيش بطاقات للمراجعة دلوقتي',
+        emptyHint: 'اعتمد محاضرة عشان تتولّد بطاقات جديدة.',
+        emptyFiltered: 'مفيش بطاقات في الموضوع ده',
+        emptyFilteredHint: 'جرّب «كل المواضيع».',
+        done: {
+          title: 'خلصت جلسة المراجعة',
+          desc: 'راجعت {reviewed} بطاقة — {improved} بقى تقييمها أعلى.',
+          descSkipped: 'قفلت الجلسة من غير تقييم — التقييم هو اللي بيثبّت المعلومة.',
+          restart: 'جلسة جديدة',
+          quiz: 'كويز على أضعف موضوع',
+        },
+      },
+      recent: {
+        title: 'آخر المحاولات',
+        hint: 'أعد أي محاولة من هنا مباشرة',
+        empty: 'لسه مفيش محاولات كويز',
+        retake: 'إعادة',
+        attempts: 'سؤال',
+      },
+      empty: 'لسه مفيش محتوى منشور',
+      emptyHint: 'ارفع محاضرة واعتمدها من مكتبة المنهج، وبعدين ابدأ المراجعة.',
+      goLibrary: 'مكتبة المنهج',
+      offline:
+        'مش قادرين نوصل للخادم — اتأكد إن الـ backend شغال على 127.0.0.1:8000',
+      retry: 'إعادة المحاولة',
+      sessionError: 'التقييم مافتحش — جرّب تاني.',
+    },
     placeholder: {
       lessons: {
         title: 'استعراض الدروس',
@@ -358,12 +429,6 @@ const STRINGS = {
         desc:
           'واجهة المراجعة بالتقييم الرباعي (again / hard / good / easy) مع' +
           ' فلاتر حسب الموضوع ونسبة الثقة — جزء من المرحلة الجاية من الواجهة.',
-      },
-      revision: {
-        title: 'مركز المراجعة',
-        desc:
-          'خطة مراجعة مركّزة: طابور المواضيع المحتاجة للمراجعة + إعادة أسوأ' +
-          ' محاولات الكويز + البطاقات اللي ثقتها واطية — جزء من المرحلة الجاية.',
       },
       poweredBy: 'الـ endpoints الجاهزة في الـ backend واللي الواجهة هتتوابل عليها:',
       eta: 'المرحلة الجاية من التطوير',
@@ -689,6 +754,76 @@ const STRINGS = {
         submit: 'Could not grade the quiz — please try submitting again.',
       },
     },
+    revision: {
+      title: 'Revision Center',
+      subtitle: 'One focused plan: your weakest topics plus the cards that need pinning down',
+      refresh: 'Refresh plan',
+      metrics: {
+        needsRevision: 'Topics needing revision',
+        learning: 'Topics still learning',
+        weakCards: 'Low-confidence cards',
+        mediumCards: 'Medium-confidence cards',
+      },
+      queue: {
+        title: 'Topic queue',
+        hint: 'Weakest first — start from the top',
+        empty: 'Comfort zone: nothing needs revision right now',
+        attempts: '{n} attempts',
+        lastScore: 'Last score: {score}%',
+        noScore: 'No attempts yet',
+        retake: 'Retake quiz',
+        cards: 'Its cards',
+      },
+      cards: {
+        title: 'Card review session',
+        hint: 'Flip the card, then rate yourself honestly — the rating is saved on the server.',
+        progress: 'Card {n} of {total}',
+        front: 'Question',
+        back: 'Answer',
+        flip: 'Flip card',
+        skip: 'Skip',
+        ratings: {
+          again: 'Again',
+          hard: 'Hard',
+          good: 'Good',
+          easy: 'Easy',
+        },
+        filters: {
+          label: 'Topic',
+          all: 'All topics',
+          includeHigh: 'Include known cards',
+        },
+        tones: {
+          low: 'Low confidence',
+          medium: 'Medium confidence',
+          high: 'High confidence',
+        },
+        empty: 'No cards to review right now',
+        emptyHint: 'Publish a lecture to generate fresh cards.',
+        emptyFiltered: 'No cards in this topic',
+        emptyFilteredHint: 'Try “All topics”.',
+        done: {
+          title: 'Review session complete',
+          desc: 'You reviewed {reviewed} cards — {improved} moved up a level.',
+          descSkipped: 'You closed the session without rating — rating is what makes it stick.',
+          restart: 'New session',
+          quiz: 'Quiz my weakest topic',
+        },
+      },
+      recent: {
+        title: 'Recent attempts',
+        hint: 'Retake any attempt straight from here',
+        empty: 'No quiz attempts yet',
+        retake: 'Retake',
+        attempts: 'questions',
+      },
+      empty: 'No published content yet',
+      emptyHint: 'Upload a lecture and publish it from the course library, then start revising.',
+      goLibrary: 'Course library',
+      offline: 'Cannot reach the server — make sure the backend runs on 127.0.0.1:8000',
+      retry: 'Retry',
+      sessionError: 'Could not save the rating — please try again.',
+    },
     placeholder: {
       lessons: {
         title: 'Lesson Viewer',
@@ -713,12 +848,6 @@ const STRINGS = {
         desc:
           'The review interface with four-way confidence ratings' +
           ' (again / hard / good / easy), topic filters and confidence stats — next UI phase.',
-      },
-      revision: {
-        title: 'Revision Center',
-        desc:
-          'A focused revision plan: the recommended topic queue plus re-takes of' +
-          ' the weakest quizzes and low-confidence flashcards — next UI phase.',
       },
       poweredBy: 'Backend endpoints already live and waiting for this view:',
       eta: 'Next development phase',

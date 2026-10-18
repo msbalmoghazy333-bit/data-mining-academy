@@ -1,7 +1,7 @@
 /**
  * Placeholder view for feature screens arriving in the next UI phase
- * (lessons, tutor, quiz, flashcards, revision). Honest about what exists:
- * every one of them has a working backend endpoint listed on screen.
+ * (lessons and flashcards). Honest about what exists: every one of them has
+ * a working backend endpoint listed on screen.
  */
 
 import { Link } from 'react-router-dom'
@@ -14,7 +14,6 @@ import { buttonClasses, Card } from '../components/ui.jsx'
 const ENDPOINTS = {
   lessons: ['/v1/topics', '/v1/lessons/{id}'],
   flashcards: ['GET /v1/flashcards', 'POST /v1/flashcards/{id}/confidence'],
-  revision: ['GET /v1/dashboard/summary', 'GET /v1/flashcards'],
 }
 
 export default function ComingSoon({ view }) {
