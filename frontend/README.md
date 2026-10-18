@@ -29,4 +29,4 @@ npm run lint     # فحص الكود بـ oxlint
 | `/quiz` | بنك الأسئلة ومُحاكي الامتحان |
 | `/revision` | مركز المراجعة |
 | `/lessons` | عارض الدروس |
-| `/flashcards` | قيد التنفيذ |
+| `/flashcards` | بطاقات التذكر |

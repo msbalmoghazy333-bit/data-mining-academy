@@ -10,7 +10,7 @@ import Tutor from './pages/Tutor.jsx'
 import Quiz from './pages/Quiz.jsx'
 import Revision from './pages/Revision.jsx'
 import Lessons from './pages/Lessons.jsx'
-import ComingSoon from './pages/ComingSoon.jsx'
+import Flashcards from './pages/Flashcards.jsx'
 
 function NotFound() {
   const { t } = useLanguage()
@@ -34,7 +34,7 @@ export default function App() {
         <Route path="lessons" element={<Lessons />} />
         <Route path="tutor" element={<Tutor />} />
         <Route path="quiz" element={<Quiz />} />
-        <Route path="flashcards" element={<ComingSoon view="flashcards" />} />
+        <Route path="flashcards" element={<Flashcards />} />
         <Route path="revision" element={<Revision />} />
         <Route path="*" element={<NotFound />} />
       </Route>

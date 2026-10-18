@@ -180,7 +180,6 @@ const STRINGS = {
         'مش قادرين نوصل للخادم — اتأكد إن الـ backend شغال على 127.0.0.1:8000',
       notFound: 'الصفحة غير موجودة',
       backHome: 'العودة إلى لوحة التحكم',
-      soon: 'قريبًا',
     },
     tutor: {
       title: 'المعلم الذكي',
@@ -447,32 +446,74 @@ const STRINGS = {
       chars: '{n} حرف',
       actions: {
         quiz: 'كويز على الدرس ده',
+        cards: 'بطاقاته',
         prev: 'السابق',
         next: 'التالي',
       },
     },
-    placeholder: {
-      tutor: {
-        title: 'المعلم الذكي',
-        desc:
-          'شاشة المحادثة مع المعلم الذكي (RAG) بإجابات مسنودة على المحتوى المنشور' +
-          ' مع استشهادات متحقَّق منها — جزء من المرحلة الجاية من الواجهة.',
+    flashcards: {
+      title: 'بطاقات التذكر',
+      subtitle: 'كل كروتك في مكان واحد: فلترها بالموضوع والثقة، ذاكرها واحدة واحدة، وقيّمها',
+      refresh: 'تحديث',
+      study: 'ابدأ المذاكرة',
+      stats: {
+        total: 'كل البطاقات',
+        low: 'ضعيفة',
+        medium: 'متوسطة',
+        high: 'قوية',
       },
-      quiz: {
-        title: 'بنك الأسئلة والكويزات',
-        desc:
-          'جهاز محاكاة الامتحان: كويزات سريعة ووضع الاختبار (بدون نموذج الإجابة)،' +
-          ' مع تصحيح فوري ونتيجة لكل موضوع — جزء من المرحلة الجاية من الواجهة.',
+      filters: {
+        title: 'الفلاتر',
+        topic: 'الموضوع',
+        allTopics: 'كل المواضيع',
+        confidence: 'مستوى الثقة',
+        search: 'ابحث في السؤال أو الإجابة…',
+        shuffle: 'ترتيب عشوائي',
+        clear: 'مسح الفلاتر',
+        shown: '{n} من {total} بطاقة',
       },
-      flashcards: {
-        title: 'بطاقات التذكر',
-        desc:
-          'واجهة المراجعة بالتقييم الرباعي (again / hard / good / easy) مع' +
-          ' فلاتر حسب الموضوع ونسبة الثقة — جزء من المرحلة الجاية من الواجهة.',
+      tones: {
+        low: 'ضعيفة',
+        medium: 'متوسطة',
+        high: 'قوية',
       },
-      poweredBy: 'الـ endpoints الجاهزة في الـ backend واللي الواجهة هتتوابل عليها:',
-      eta: 'المرحلة الجاية من التطوير',
-      back: 'رجوع للوحة التحكم',
+      browse: {
+        title: 'كل البطاقات',
+        hint: 'السؤال والإجابة معروضين — قيّم أي بطاقة بضغطة واحدة',
+        quickRate: 'قيّمها بسرعة',
+      },
+      session: {
+        title: 'جلسة مذاكرة',
+        progress: 'بطاقة {n} من {total}',
+        front: 'السؤال',
+        back: 'الإجابة',
+        flipHint: 'دوس على البطاقة عشان تشوف الإجابة',
+        keys: 'اختصارات: مسافة = قلب البطاقة · 1-4 = تقييم · Esc = خروج',
+        exit: 'خروج',
+        skip: 'تخطّي',
+      },
+      ratings: {
+        again: 'أعدها',
+        hard: 'صعبة',
+        good: 'كويسة',
+        easy: 'سهلة',
+      },
+      done: {
+        title: 'خلصت الجلسة',
+        desc: 'راجعت {reviewed} بطاقة — {improved} منها اتحسّنت درجة.',
+        descSkipped: 'خرجت من غير أي تقييم — التقييم هو اللي بيثبّت المعلومة.',
+        restart: 'جلسة جديدة',
+        back: 'رجوع لكل البطاقات',
+      },
+      capped: 'بنعرض أول {shown} بطاقة من أصل {total}.',
+      empty: 'لسه مفيش بطاقات',
+      emptyHint: 'ارفع محاضرة واعتمد نشرها من مكتبة المنهج، وهتتولّد بطاقات لكل موضوع.',
+      emptyFiltered: 'مفيش بطاقة بالمواصفات دي',
+      emptyFilteredHint: 'جرّب توسّع الفلاتر أو امسح البحث.',
+      goLibrary: 'مكتبة المنهج',
+      offline: 'مش قادرين نوصل للخادم — اتأكد إن الـ backend شغال على 127.0.0.1:8000',
+      retry: 'إعادة المحاولة',
+      saveError: 'التقييم ما اتحفظش — جرّب تاني.',
     },
   },
   en: {
@@ -641,7 +682,6 @@ const STRINGS = {
       offline: 'Cannot reach the server — make sure the backend runs on 127.0.0.1:8000',
       notFound: 'Page not found',
       backHome: 'Back to the dashboard',
-      soon: 'Coming soon',
     },
     tutor: {
       title: 'AI Tutor',
@@ -906,32 +946,75 @@ const STRINGS = {
       chars: '{n} chars',
       actions: {
         quiz: 'Quiz this lesson',
+        cards: 'Its cards',
         prev: 'Previous',
         next: 'Next',
       },
     },
-    placeholder: {
-      tutor: {
-        title: 'AI Tutor',
-        desc:
-          'The chat interface for the RAG tutor, grounded in published content with' +
-          ' citation verification, ships in the next UI phase.',
+    flashcards: {
+      title: 'Flashcards',
+      subtitle:
+        'The whole deck in one place: filter by topic and confidence, then study and rate card by card',
+      refresh: 'Refresh',
+      study: 'Start studying',
+      stats: {
+        total: 'All cards',
+        low: 'Low confidence',
+        medium: 'Medium confidence',
+        high: 'High confidence',
       },
-      quiz: {
-        title: 'Quiz & Exam Simulator',
-        desc:
-          'The exam simulator: quick quizzes plus exam mode (no answer key leaked),' +
-          ' instant grading and per-topic breakdowns — next UI phase.',
+      filters: {
+        title: 'Filters',
+        topic: 'Topic',
+        allTopics: 'All topics',
+        confidence: 'Confidence',
+        search: 'Search the question or the answer…',
+        shuffle: 'Shuffle',
+        clear: 'Clear filters',
+        shown: '{n} of {total} cards',
       },
-      flashcards: {
-        title: 'Flashcards',
-        desc:
-          'The review interface with four-way confidence ratings' +
-          ' (again / hard / good / easy), topic filters and confidence stats — next UI phase.',
+      tones: {
+        low: 'Low',
+        medium: 'Medium',
+        high: 'High',
       },
-      poweredBy: 'Backend endpoints already live and waiting for this view:',
-      eta: 'Next development phase',
-      back: 'Back to the dashboard',
+      browse: {
+        title: 'All cards',
+        hint: 'Both sides are visible — rate any card with a single click',
+        quickRate: 'Quick rate',
+      },
+      session: {
+        title: 'Study session',
+        progress: 'Card {n} of {total}',
+        front: 'Question',
+        back: 'Answer',
+        flipHint: 'Click the card to reveal the answer',
+        keys: 'Shortcuts: Space = flip · 1-4 = rate · Esc = exit',
+        exit: 'Exit',
+        skip: 'Skip',
+      },
+      ratings: {
+        again: 'Again',
+        hard: 'Hard',
+        good: 'Good',
+        easy: 'Easy',
+      },
+      done: {
+        title: 'Session complete',
+        desc: 'You reviewed {reviewed} cards — {improved} moved up a level.',
+        descSkipped: 'You exited without rating — rating is what makes it stick.',
+        restart: 'New session',
+        back: 'Back to all cards',
+      },
+      capped: 'Showing the first {shown} of {total} cards.',
+      empty: 'No flashcards yet',
+      emptyHint: 'Upload a lecture and publish it from the course library to generate cards.',
+      emptyFiltered: 'No card matches these filters',
+      emptyFilteredHint: 'Try widening the filters or clearing the search.',
+      goLibrary: 'Course library',
+      offline: 'Cannot reach the server — make sure the backend runs on 127.0.0.1:8000',
+      retry: 'Retry',
+      saveError: 'Could not save the rating — please try again.',
     },
   },
 }

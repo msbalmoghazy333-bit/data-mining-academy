@@ -502,6 +502,13 @@ export default function Lessons() {
                         <Play className="h-3.5 w-3.5" aria-hidden="true" />
                         {t.lessons.actions.quiz}
                       </Link>
+                      <Link
+                        to={`/flashcards?topic=${activeTopic.id}`}
+                        className={buttonClasses({ variant: 'secondary', size: 'sm' })}
+                      >
+                        <Layers className="h-3.5 w-3.5" aria-hidden="true" />
+                        {t.lessons.actions.cards}
+                      </Link>
                     </div>
                   </div>
 
