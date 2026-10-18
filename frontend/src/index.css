@@ -1,0 +1,83 @@
+@import 'tailwindcss';
+
+/* ------------------------------------------------------------------
+   Data Mining Academy — global styles
+   Academic, calm theme: slate-50 canvas, deep slate type, restrained
+   teal accents. Arabic-first RTL — the document direction lives on
+   <html dir> (toggled by the LanguageProvider), while every layout
+   utility below uses logical properties so both directions are free.
+   ------------------------------------------------------------------ */
+
+@theme {
+  /* Brand palette — restrained teal, mapped over Tailwind's teal scale
+     so `text-brand-600` === `text-teal-600`. */
+  --color-brand-50: #f0fdfa;
+  --color-brand-100: #ccfbf1;
+  --color-brand-200: #99f6e4;
+  --color-brand-300: #5eead4;
+  --color-brand-400: #2dd4bf;
+  --color-brand-500: #14b8a6;
+  --color-brand-600: #0d9488;
+  --color-brand-700: #0f766e;
+  --color-brand-800: #115e59;
+  --color-brand-900: #134e4a;
+
+  --font-sans: 'Cairo', 'Segoe UI', 'Tahoma', system-ui, sans-serif;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  background-color: #f8fafc; /* slate-50 */
+  color: #0f172a; /* slate-900 type */
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Thin, unobtrusive scrollbar that works in both LTR and RTL */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(148 163 184 / 0.6);
+  border-radius: 9999px;
+}
+
+/* Utility: render the Latin "English terminology" segments LTR inside
+   RTL text (and vice versa once the UI language flips). */
+.ltr {
+  direction: ltr;
+  unicode-bidi: isolate;
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+}
+
+/* Native <details> elements used inside the review modal. */
+details > summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+details[open] > summary .chevron {
+  transform: rotate(180deg);
+}
+
+/* keep focus rings calm but visible */
+:focus-visible {
+  outline: 2px solid #0d9488;
+  outline-offset: 2px;
+}
