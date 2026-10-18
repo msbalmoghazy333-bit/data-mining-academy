@@ -405,13 +405,53 @@ const STRINGS = {
       retry: 'إعادة المحاولة',
       sessionError: 'التقييم مافتحش — جرّب تاني.',
     },
-    placeholder: {
-      lessons: {
-        title: 'استعراض الدروس',
-        desc:
-          'الواجهة المخصّصة لقراءة الدروس المنشورة (Markdown + المسرد + المعادلات)' +
-          ' هتتضاف في المرحلة الجاية — الـ backend جاهز بالكامل ورا الشاشة دي.',
+    lessons: {
+      title: 'استعراض الدروس',
+      subtitle: 'الدروس المنشورة كاملة: أهداف، شرح، معادلات، مسرد مصطلحات، وخلاصة',
+      search: 'ابحث باسم الموضوع…',
+      topics: 'المواضيع',
+      noLessons: 'مش منشور',
+      empty: 'لسه مفيش دروس منشورة',
+      emptyHint: 'ارفع محاضرة واعتمد نشرها من مكتبة المنهج، وهيتولّد درس لكل موضوع.',
+      goLibrary: 'مكتبة المنهج',
+      offline:
+        'مش قادرين نوصل للخادم — اتأكد إن الـ backend شغال على 127.0.0.1:8000',
+      retry: 'إعادة المحاولة',
+      refresh: 'تحديث',
+      noLesson: 'الموضوع ده لسه مفيش له درس منشور',
+      noLessonHint: 'جرّب موضوع تاني، أو اعتمد محاضرة جديدة عشان يتولّد الدرس.',
+      noMatch: 'مفيش موضوع بالاسم ده',
+      pick: 'اختار موضوع من القايمة عشان تقرأ الدرس.',
+      loadingLesson: 'جارٍ تحميل الدرس…',
+      lessonError: 'الدرس مفتحش — جرّب تاني.',
+      blocks: {
+        objectives: 'أهداف الدرس',
+        prerequisites: 'معلومات سابقة مطلوبة',
+        content: 'شرح الدرس',
+        formulas: 'المعادلات',
+        terminology: 'مسرد المصطلحات',
+        comparisons: 'مقارنات',
+        summary: 'الخلاصة',
       },
+      terminologyTable: {
+        term: 'المصطلح (EN)',
+        arabic: 'المقابل العربي',
+        definition: 'التعريف',
+      },
+      comparisonTable: {
+        pair: 'المقارنة',
+        aspect: 'وجه المقارنة',
+        detail: 'التفصيل',
+      },
+      formulaNote: 'امتى تستخدمها',
+      chars: '{n} حرف',
+      actions: {
+        quiz: 'كويز على الدرس ده',
+        prev: 'السابق',
+        next: 'التالي',
+      },
+    },
+    placeholder: {
       tutor: {
         title: 'المعلم الذكي',
         desc:
@@ -824,13 +864,53 @@ const STRINGS = {
       retry: 'Retry',
       sessionError: 'Could not save the rating — please try again.',
     },
-    placeholder: {
-      lessons: {
-        title: 'Lesson Viewer',
-        desc:
-          'A dedicated reading view for published lessons (markdown, glossary and' +
-          ' formulas) arrives in the next phase — the full backend API is ready.',
+    lessons: {
+      title: 'Lesson Viewer',
+      subtitle: 'Full published lessons: objectives, explanation, formulas, glossary and summary',
+      search: 'Search topics…',
+      topics: 'Topics',
+      noLessons: 'not published',
+      empty: 'No published lessons yet',
+      emptyHint:
+        'Upload a lecture and publish it from the course library to generate one lesson per topic.',
+      goLibrary: 'Course library',
+      offline: 'Cannot reach the server — make sure the backend runs on 127.0.0.1:8000',
+      retry: 'Retry',
+      refresh: 'Refresh',
+      noLesson: 'This topic has no published lesson yet',
+      noLessonHint: 'Try another topic, or publish a new lecture to generate it.',
+      noMatch: 'No topic matches that name',
+      pick: 'Pick a topic from the list to read its lesson.',
+      loadingLesson: 'Loading lesson…',
+      lessonError: 'Could not load the lesson — please try again.',
+      blocks: {
+        objectives: 'Lesson objectives',
+        prerequisites: 'Prerequisites',
+        content: 'Lesson body',
+        formulas: 'Formulas',
+        terminology: 'Terminology',
+        comparisons: 'Comparisons',
+        summary: 'Summary',
       },
+      terminologyTable: {
+        term: 'Term (EN)',
+        arabic: 'Arabic',
+        definition: 'Definition',
+      },
+      comparisonTable: {
+        pair: 'Comparison',
+        aspect: 'Aspect',
+        detail: 'Detail',
+      },
+      formulaNote: 'When to use it',
+      chars: '{n} chars',
+      actions: {
+        quiz: 'Quiz this lesson',
+        prev: 'Previous',
+        next: 'Next',
+      },
+    },
+    placeholder: {
       tutor: {
         title: 'AI Tutor',
         desc:

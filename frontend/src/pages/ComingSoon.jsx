@@ -1,7 +1,7 @@
 /**
- * Placeholder view for feature screens arriving in the next UI phase
- * (lessons and flashcards). Honest about what exists: every one of them has
- * a working backend endpoint listed on screen.
+ * Placeholder view for the last feature screen still missing from the UI
+ * (flashcards). Honest about what exists: it lists the backend endpoints the
+ * screen will be wired to.
  */
 
 import { Link } from 'react-router-dom'
@@ -12,7 +12,6 @@ import { buttonClasses, Card } from '../components/ui.jsx'
 
 /* Endpoint chips shown per view — `ltr` so slugs read correctly in RTL. */
 const ENDPOINTS = {
-  lessons: ['/v1/topics', '/v1/lessons/{id}'],
   flashcards: ['GET /v1/flashcards', 'POST /v1/flashcards/{id}/confidence'],
 }
 

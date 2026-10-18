@@ -11,6 +11,7 @@ from app.api.v1.endpoints import (
     flashcards,
     generation,
     health,
+    lessons,
     quizzes,
     topics,
     translation,
@@ -22,6 +23,7 @@ api_router.include_router(health.router)
 api_router.include_router(files.router)
 api_router.include_router(generation.router)
 api_router.include_router(topics.router)
+api_router.include_router(lessons.router)
 api_router.include_router(translation.router)
 api_router.include_router(tutor.router)
 api_router.include_router(quizzes.router)

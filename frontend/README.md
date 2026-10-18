@@ -28,4 +28,5 @@ npm run lint     # فحص الكود بـ oxlint
 | `/tutor` | المعلم الذكي (RAG) |
 | `/quiz` | بنك الأسئلة ومُحاكي الامتحان |
 | `/revision` | مركز المراجعة |
-| `/lessons` · `/flashcards` | قيد التنفيذ |
+| `/lessons` | عارض الدروس |
+| `/flashcards` | قيد التنفيذ |
